@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Home</title>
+      <title>Curfew Permission</title>
       <!-- Bootstrap -->
       <link rel="icon" href="images/moblogo.png" type="image/png" sizes="16x16">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Poppins:400,500,700&display=swap" rel="stylesheet">
@@ -55,14 +55,8 @@
 			        </div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label class="">Start Date/ਤਾਰੀਖ ਸ਼ੁਰੂ</label>
-							<input  id="datepicker" name="start_date" placeholder="Start Date/ਤਾਰੀਖ ਸ਼ੁਰੂ" class="form-control" required>
-						</div>
-			        </div>
-					<div class="col-md-6">
-						<div class="form-group">
-							<label class="">End Date/ਅੰਤ ਦੀ ਮਿਤੀ</label>
-							<input id='datepicker1' placeholder="End Date/ਅੰਤ ਦੀ ਮਿਤੀ" name="end date" class="form-control" required>
+							<label class="">Date/ਤਾਰੀਖ</label>
+							<input  id="datepicker" name="date" placeholder="Date/ਤਾਰੀਖ" class="form-control" required>
 						</div>
 			        </div>
 					<div class="col-md-6">
@@ -97,7 +91,6 @@
 	<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 	<script>
         $('#datepicker').datepicker({uiLibrary: 'bootstrap4'});
-		$('#datepicker1').datepicker({uiLibrary: 'bootstrap4'});
     </script>
    </body>
 </html>

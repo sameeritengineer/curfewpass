@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\CurfewInformation;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMail;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $informations = CurfewInformation::get();
+        return view('home',compact('informations'));
+    }
+
+    public function send_mail(Request $request)
+    {
+        try
+        {
+            Mail::to($request->email)->send(new SendMail());
+        }
+        catch (Exception $e)
+        {
+            return response()->json($e->getMessage());
+        }
     }
 }

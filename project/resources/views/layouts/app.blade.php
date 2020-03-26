@@ -18,6 +18,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery.dataTables.min.css')}}">
 </head>
 <body>
     <div id="app">

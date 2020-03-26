@@ -17,8 +17,7 @@ class CreateCurfewInformationsTable extends Migration
             $table->id();
             $table->char('name');
             $table->string('email')->unique();
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('date');
             $table->char('mobile_no');
             $table->char('occupation');
             $table->longText('message');
