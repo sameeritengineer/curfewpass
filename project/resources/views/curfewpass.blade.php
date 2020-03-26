@@ -37,7 +37,7 @@
 					</div>
         		</div>
 			</div>
-			<form method="post" action="{{route('curfewpass')}}">
+			<form method="post" action="{{route('curfewpass')}}" enctype="multipart/form-data">
 				@csrf
 				<div class="row">
 					<div class="col-md-12"><h2 class="dtls">Please Add Your Details/ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਵੇਰਵੇ ਸ਼ਾਮਲ ਕਰੋ</h2></div>
@@ -75,6 +75,18 @@
 						<div class="form-group">
 							<label class="">Curfew Pass Justification/ਕਰਫਿ ਪਾਸ ਜਸਟਿਫਿਕੇਸ਼ਨ</label>
 							<textarea type="text" name="message" placeholder="Curfew Pass Justification/ਕਰਫਿ ਪਾਸ ਜਸਟਿਫਿਕੇਸ਼ਨ" class="form-control" required></textarea>
+						</div>
+			        </div>
+			        <div class="col-md-6">
+						<div class="form-group">
+							<label class="">Customer Image/ਗਾਹਕ ਚਿੱਤਰ</label>
+							<input type="file" name="image" class="form-control" required accept="image/*">
+						</div>
+			        </div>
+			        <div class="col-md-6">
+						<div class="form-group">
+							<label class="">Customer Aadhar Image/ਗਾਹਕ ਅਧਾਰ ਚਿੱਤਰ</label>
+							<input type="file" name="aadhar_image" class="form-control" required accept="image/*">
 						</div>
 			        </div>
 					<div class="col-md-12">

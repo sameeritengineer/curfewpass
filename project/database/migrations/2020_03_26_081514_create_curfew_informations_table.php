@@ -21,6 +21,10 @@ class CreateCurfewInformationsTable extends Migration
             $table->char('mobile_no');
             $table->char('occupation');
             $table->longText('message');
+            $table->enum('status',[0,1])->default(0);
+            $table->uuid('device_id')->nullable();
+            $table->string('image');
+            $table->string('aadhar_image');
             $table->timestamps();
         });
     }

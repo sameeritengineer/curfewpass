@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\CurfewInformation;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -31,13 +32,30 @@ class HomeController extends Controller
 
     public function send_mail(Request $request)
     {
-        try
+        //return $request->all();
+        $information = CurfewInformation::find($request->id);
+        $information->status = $request->status;
+        if($information->update())
         {
-            Mail::to($request->email)->send(new SendMail());
+            try
+            {
+                Mail::to($information->email)->send(new SendMail());
+                return redirect()->route('home')->with(['message'=>$information->name.' information has been confirmed!']);
+            } 
+            catch (Exception $e)
+            {
+                return redirect()->route('home')->with(['message'=>$e->getMessages()]);
+            }
         }
-        catch (Exception $e)
+        else
         {
-            return response()->json($e->getMessage());
+            return redirect()->route('home')->with(['message'=>'Something error!.']);
         }
+    }
+
+    public function show($id)
+    {
+        $information = CurfewInformation::find($id);
+        return view('show_details',compact('information'));
     }
 }
